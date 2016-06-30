@@ -13,13 +13,19 @@
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla.</p>
                 </div>
             </div>
-            <div class="row small-up-2 medium-up-3 large-up-4">
-              <% @projects.each do |project| %>
-                <div class="column">
-                    <img class="thumbnail" src="http://placehold.it/550x550">
-                    <h5><%= project.title %></h5>
+            <div class="row small-up-2 medium-up-3 large-up-4" data-equalizer>
+                <% @projects.each do |project| %>
+                <div class="medium-6 columns end card project-panel" data-equalizer-watch>
+                    <div class="content">
+                        <span class="title"><%= project.title %></span>
+                        <p><%= project.description %></p>
+                    </div>
+                    <div class="action">
+                        <a href='#'>This is a link</a>
+                        <a href='#'>+</a>
+                    </div>
                 </div>
-              <% end %>
+                <% end %>
             </div>
             <hr>
             <div class="row">
