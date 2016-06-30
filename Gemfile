@@ -16,7 +16,6 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'foundation-rails', '~> 6.2', '>= 6.2.3.0'
-gem 'rspec', '~> 3.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -33,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails', '~> 3.5.0.beta4'
+  gem 'rails-controller-testing', '~> 0.1.1'
+  gem 'factory_girl_rails', '~> 4.7'
   gem 'byebug', platform: :mri
 end
 
