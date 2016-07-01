@@ -38,6 +38,7 @@ group :development, :test do
   gem 'rails-controller-testing', '~> 0.1.1'
   gem 'factory_girl_rails', '~> 4.7'
   gem 'byebug', platform: :mri
+  gem 'pry-rails', '~> 0.3.4'
 end
 
 group :development do

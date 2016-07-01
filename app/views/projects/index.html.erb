@@ -13,8 +13,7 @@
               <p><%= project.description %></p>
           </div>
           <div class="action">
-              <a href='#'>This is a link</a>
-              <a href='#'>+</a>
+            <%= link_to 'View Jobs', project_jobs_path(project.id) %>
           </div>
     </div>
     <% end %>
