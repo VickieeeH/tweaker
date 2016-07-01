@@ -1,0 +1,29 @@
+<div class="row small-up-2 medium-up-3 large-up-4" data-equalizer>
+  <% if @jobs.nil? %>
+    <div class="centered">
+        <h1>This project does not exist</h1>
+    </div>
+  <% else %>
+    <div class="row centered" data-equalizer-watch>
+        <%= link_to new_project_job_path(@project.id) do %>
+          <%= fa_icon 'plus-circle', class: 'fa-5x plus-btn' %>
+        <% end %>
+    </div>
+
+    <% @jobs.each do |job| %>
+      <div class="medium-6 columns end card project-panel" data-equalizer-watch>
+          <div class="content">
+              <span class="title"><%= job.title %></span>
+              <p><%= job.description %></p>
+              <p>Status: <%= job.status %></p>
+          </div>
+          <div class="action">
+            <%= link_to 'View Details', project_job_path(@project.id, job.id) %>
+            <%= link_to 'Start' %>
+          </div>
+
+
+    </div>
+    <% end %>
+  <% end %>
+</div>
