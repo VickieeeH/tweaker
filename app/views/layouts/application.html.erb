@@ -18,13 +18,25 @@
                 <div class="title-bar hide-for-large">
                     <div class="title-bar-left">
                         <button class="menu-icon" type="button" data-open="my-info"></button>
-                        <span class="title-bar-title">Mike Mikerson</span>
                     </div>
                 </div>
                 <div class="callout primary">
                     <div class="row column">
                         <h1>Hello! We are just building this thing.</h1>
                         <p class="lead">So dont expect awesome styling.</p>
+                        <p class="navbar-text pull-right">
+                        <% if user_signed_in? %>
+                          Logged in as <strong><%= current_user.email %></strong>.
+                          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                        <% else %>
+                          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+                          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                        <% end %>
+                    </div>
+                    <div class="row cloumn">
+                      <p class="notice"><%= notice %></p>
+                      <p class="alert"><%= alert %></p>
                     </div>
                 </div>
 
@@ -64,6 +76,6 @@
             </div>
         </div>
     </div>
-    
+
   </body>
 </html>
