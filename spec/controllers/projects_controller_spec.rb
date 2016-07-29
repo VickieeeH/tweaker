@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe ProjectsController, type: :controller do
   describe "#index" do
+    let(:project) { FactoryGirl.create(:project) }
     it "should assign all the projects" do
-      projects = Project.create
       get :index
-      expect(assigns(:projects)).to eq [projects]
+      expect(assigns(:projects)).to eq [project]
     end
   end
 

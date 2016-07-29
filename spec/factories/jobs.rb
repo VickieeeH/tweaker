@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :job do
+    association :project
     title "MyString"
     description "MyText"
-    status 1
   end
 end
